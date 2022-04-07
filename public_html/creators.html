@@ -13,6 +13,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+            ::-webkit-scrollbar {
+            width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+            background: blueviolet; 
+            }
+            
+            ::-webkit-scrollbar-thumb {
+            background: yellow; 
+            border-radius: 20px;  
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+            background: yellow; 
+            }
+
             .text-purple {
                 color:blueviolet !important;
             }
@@ -32,6 +49,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             body {
                 margin:0;
                 background-color: blueviolet;
+                overflow-x: hidden;
             }
 
             .card{
@@ -84,38 +102,241 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             }
 
 
+            * {
+            box-sizing: border-box;
+            }
+
+            .row > .column {
+            padding: 0 8px;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .column {
+            float: left;
+            width: 25%;
+            }
+
+            .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            }
+
+    
+            .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+            }
+
+            .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0);
+            }
+
+            .close:hover,
+            .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+            .mySlides {
+            display: none;
+            
+            }
+
+            .cursor {
+            cursor: pointer;
+            }
+            .prev,
+            .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            text-decoration: none;
+            
+            }
+
+            .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+
+            }
+
+            .prev:hover,
+            .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            color: yellow;
+            }
+
+            #image {
+            margin-bottom: -4px;
+            background-color: rgba(0, 0, 0, 0)
+            
+            }
+
+            .demo {
+            opacity: 0.6;
+            }
+
+            .active,
+            .demo:hover {
+            opacity: 1;
+            }
+
+            #image.hover-shadow {
+            transition: 0.3s;
+            }
+
+            .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            
+            .btn-primary {
+            color: yellow !important;
+            background-color: blueviolet !important;
+            border: 2px yellow solid !important;
+            }
+            .btn-primary:hover {
+            color: yellow !important;
+            background-color: #5a0163 !important;
+            border: 2px yellow solid !important;
+            }
         </style>
     </head>
     <body>
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext text-light fs-3">1 / 3</div>
+                <img id="image" src="kunukart.png" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext text-light fs-3">2 / 3</div>
+                <img id="image" src="luigikart.png" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext text-light fs-3">3 / 3</div>
+                <img id="image" src="todkart.png" style="width:100%">
+              </div>
+              
+
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+          
+            </div>
+          </div>
+
         <div class="row fs-1 bg-purple topnav">
-            <a class="col-sm-12 text-decoration-none active text-yellow " href="en.html">Wario Web</a>
+            <a class="col-sm-12 text-decoration-none active text-yellow " href="index.html">Wario Web</a>
         </div>
         <div class="text-center fs-3 text-yellow">
-            Nagyon okos és jóképű készítők:
+                Nagyon okos és jóképű készítők:
         </div>
         <div class="container mt-3 text-center">
-            <div class="card bg-purple p-0" style="width:300px; margin-top: 3%;">
-              <img class="card-img-top" src="kunukart.png" style="width:100%; margin-top: 1%;">
+            <div class="card bg-purple p-0" style="width:300px; margin-top: 3%; margin-left: 8%; position: relative; display: inline-block; box-sizing: border-box;">
+              <img class="card-img-top hover-shadow cursor" src="kunukart.png" onclick="openModal();currentSlide(1)" style="width:100%; margin-top: 1%;">
               <div class="card-body">
                 <h4 class="card-title">Kollár Bálint</h4>   
                 <p class="card-text">Szerinte mindenki ostoba és ő a hitboxok nagymestere</p>
+                <a onclick="openModal();currentSlide(1)"class="btn btn-primary">See Image</a>
               </div>
             </div>
-            <div class="card bg-purple" style="width:300px;margin-top: 3%;">
-                <img class="card-img-top" src="luigikart.png"  style="width:100%; margin-top: 1%;">
+            <div class="card bg-purple" style="width:300px;margin-left: 8%; margin-top: 3%;  position: relative; display: inline-block; box-sizing: border-box;">
+                <img class="card-img-top hover-shadow cursor" src="luigikart.png" onclick="openModal();currentSlide(1)" style="width:100%; margin-top: 1%;">
                 <div class="card-body">
                   <h4 class="card-title">Szabó Bálint</h4>   
-                  <p class="card-text">Szerinte mindenki ostoba és ő a hitboxok nagymestere</p>
+                  <p class="card-text">Valami Szöveg Valami Szöveg Valami Szöveg</p>
+                  <a onclick="openModal();currentSlide(1)" class="btn btn-primary">See Image</a>
                 </div>
               </div>
-            <div class="card bg-purple " style="width:300px;margin-top: 3%; margin-bottom: 3%;">
-                <img class="card-img-top" src="luigikart.png"  style="width:100%; margin-top: 1%;">
+            <div class="card bg-purple " style="width:300px;margin-left: 8%; margin-top: 3%; margin-bottom: 3%;  position: relative; display: inline-block; box-sizing: border-box;">
+                <img class="card-img-top hover-shadow cursor"  src="todkart.png" onclick="openModal();currentSlide(1)" style="width:100%; margin-top: 1%; ">
                 <div class="card-body">
                     <h4 class="card-title">Horváth Márk</h4>   
-                    <p class="card-text">Szerinte mindenki ostoba és ő a hitboxok nagymestere</p>
+                    <p class="card-text">Valami Szöveg Valami Szöveg Valami Szöveg</p>
+                    <a onclick="openModal();currentSlide(1)" class="btn btn-primary">See Image</a>
                 </div>
             </div>
         </div>
+
         <a class="text-decoration-none " id="myBtn" href="#top">Top</a>
+        <script>
+            function openModal() {
+              document.getElementById("myModal").style.display = "block";
+            }
+            
+            function closeModal() {
+              document.getElementById("myModal").style.display = "none";
+            }
+            
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>
+
     </body>    
 </html>

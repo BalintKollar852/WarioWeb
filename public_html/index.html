@@ -13,6 +13,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
+
+            ::-webkit-scrollbar {
+            width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+            background: blueviolet; 
+            }
+            
+            ::-webkit-scrollbar-thumb {
+            background: yellow; 
+            border-radius: 20px;  
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+            background: yellow; 
+            }
+
             .container {
               position: relative;
               text-align: center;
@@ -135,6 +153,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             
             body{
                 background-color: blueviolet;
+                overflow-x: hidden;
+
             }
         </style>
     </head>
@@ -169,6 +189,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               element.scrollIntoView();
           }
         </script>
+
         <div class="modal" id="myModal">
           <div class="modal-dialog">
             <div class="modal-content bg-purple">
@@ -178,12 +199,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <h4 class="modal-title"><img src="asd.gif"></h4>
               </div>
               <div class="modal-body">
-                <audio controls>
+                <audio id="myAudio" controls>
                   <source src="/mp3/cat.mp3" type="audio/mp3">
               </audio>
-              <button type="button" class="btn bg-yellow bottom-right" data-bs-dismiss="modal">Close</button>
+              <button onclick="pauseAudio()" type="button" class="btn bg-yellow bottom-right" data-bs-dismiss="modal">Close</button>
+              
               </div>
+              <script>
+                var x = document.getElementById("myAudio"); 
         
+                function pauseAudio() { 
+                  x.pause(); 
+                } 
+              </script>
+
             </div>
           </div>
         </div>
@@ -200,7 +229,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <a id="txt" class="nav-link text-yellow fs-2" href="#"></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-yellow fs-3 " href="en.html">Wario Web</a>
+                    <a class="nav-link text-yellow fs-3 " href="index.html">Wario Web</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-yellow fs-3 "onclick="myGames()">Games</a>

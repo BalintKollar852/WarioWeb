@@ -218,10 +218,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
           <div class="bg-purple text-purple">a
             <div class="container mt-0 bg-purple">
-              <div class="toast show ">
-                <div class="toast-header  border">
+              <div class="toast show" id="valami" >
+                <div class="toast-header border">
                   <strong class="me-auto ">Üdvözlünk a weboldalon!</strong>
-                  <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" ></button>
                 </div>
               </div>
             </div>
@@ -337,7 +337,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         <div class="bg-purple text-purple">a</a></div>
 
-          <a class="text-decoration-none " id="myBtn" href="#top">Top</a>
+        <a class="text-decoration-none " id="myBtn" href="#top">Top</a>
+
+        <script>
+          const element = document.getElementById("valami");
+          setTimeout(function(){
+            element.remove();
+          },2000);
+        </script>
 
     </body>   
 </html>

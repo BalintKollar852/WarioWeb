@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <script src="../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/js/bootstrap.js" type="text/javascript"></script>
         <link href="../bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>Wario Web | Creators</title>
-        <link rel="icon" href="/image/mariobumm.gif" type="image/x-icon">
+        <link rel="icon" href="mariobumm.gif" type="image/x-icon">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -36,6 +36,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             .card{
                 border: 4px solid yellow !important;
+                color: yellow !important;
+                margin: 0 auto;
+                float: none;
+                margin-bottom: 10px;
+
             }
 
             .topnav {
@@ -60,41 +65,57 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             .topnav a.active {
             border-bottom: 3px solid yellow;
             }   
+            #myBtn {
+              position: fixed;
+              bottom: 2%;
+              right: 1%;
+              z-index: 99;
+              font-size: 100%;
+              border: none;
+              outline: none;
+              background-color: #ff0593;
+              color: yellow;
+              cursor: pointer;
+              padding: 0.5%;
+              border-radius: 10%;
+            }
+            #myBtn:hover {
+              background-color: #008cff;
+            }
 
 
         </style>
     </head>
     <body>
-        <div class="row fs-2 bg-purple topnav">
+        <div class="row fs-1 bg-purple topnav">
             <a class="col-sm-12 text-decoration-none active text-yellow " href="en.html">Wario Web</a>
         </div>
-        <div class="text-center fs-2 text-yellow">
+        <div class="text-center fs-3 text-yellow">
             Nagyon okos és jóképű készítők:
         </div>
-        <div class="row container mt-3 text-center">
-            <div class="card col-3 bg-purple" style="width:300px; margin-right: 6%; margin-left:">
-              <img class="card-img-top" src="kunukart.png" alt="Card image" style="width:100%">
+        <div class="container mt-3 text-center">
+            <div class="card bg-purple p-0" style="width:300px; margin-top: 3%;">
+              <img class="card-img-top" src="kunukart.png" style="width:100%; margin-top: 1%;">
               <div class="card-body">
-                <h4 class="card-title">Kollár Bálint</h4>
+                <h4 class="card-title">Kollár Bálint</h4>   
                 <p class="card-text">Szerinte mindenki ostoba és ő a hitboxok nagymestere</p>
               </div>
             </div>
-            <br>
-            <div class="card col-3 bg-purple" style="width:300px; margin-right: 6%">
-              <div class="card-body">
-                <h4 class="card-title">Szabó Bálint Krisztián</h4>
-                <p class="card-text">Tett be sok haszontalan dolgot ami ha sok van vicces</p>
-              </div>
-              <img class="card-img-bottom" src="luigikart.png" alt="Card image" style="width:100%">
-            </div>
-            <div class="card col-3 bg-purple style="width:300px">
-                <img class="card-img-top" src="jatek1.png" alt="Card image" style="width:100%">
+            <div class="card bg-purple" style="width:300px;margin-top: 3%;">
+                <img class="card-img-top" src="luigikart.png"  style="width:100%; margin-top: 1%;">
                 <div class="card-body">
-                  <h4 class="card-title">Horváth Márk</h4>
-                  <p class="card-text">Vámpír és démonok által átkozott</p>
+                  <h4 class="card-title">Szabó Bálint</h4>   
+                  <p class="card-text">Szerinte mindenki ostoba és ő a hitboxok nagymestere</p>
                 </div>
               </div>
-          </div>
-          
+            <div class="card bg-purple " style="width:300px;margin-top: 3%; margin-bottom: 3%;">
+                <img class="card-img-top" src="luigikart.png"  style="width:100%; margin-top: 1%;">
+                <div class="card-body">
+                    <h4 class="card-title">Horváth Márk</h4>   
+                    <p class="card-text">Szerinte mindenki ostoba és ő a hitboxok nagymestere</p>
+                </div>
+            </div>
+        </div>
+        <a class="text-decoration-none " id="myBtn" href="#top">Top</a>
     </body>    
 </html>

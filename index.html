@@ -157,6 +157,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 background-color: blueviolet;
                 overflow-x: hidden;
             }      
+
+            .fontsize{
+              font-size: 200%;
+            }
+
+            @media only screen and (max-width: 600px) {
+              .fontsize {
+                font-size: 75%;
+              }
+            }
+
         </style>
     </head>
     <body  onload="startTime()">
@@ -287,11 +298,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </button>
           </div>
           <h1 id="games" class=" text-yellow text-center bg-purple m-0" style="font-size: 300%;">Games</h1>
-
+          
           <div class="row">
               <h1 class="col-1"></h1>
               <h1 class="col-3 bg-purple m-2 text-yellow">Super Wario</h1>
-              <a class="col-4"></a>
+              <a class="col-5"></a>
               <h1 class="col-2 bg-purple m-2 text-yellow text-center">Wario Kart</h1> 
           </div>
           <div class="row">
@@ -301,9 +312,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </div>
         <div class="row">
           <a class="col-1"></a>
-          <a class="text-lg-start col-4 bg-purple m-0 text-yellow text-decoration-none fs-4">Super Wario was developed by a small group of friends called Wintendo based on a 100% original character Wario. The game is a 2D platformer with more than 1 map! The game consists of you (As Wario) jumping around bricks and platforms and etc. while there are some obsticles and even some "easter eggs" you can find. Once you complete the level, don't worry beacuse you don't have to play the game anymore! (Beacuse there aren't more levels), but hey at least you can go play our other game. </a>
+          <a class="text-lg-start col-4 bg-purple m-0 text-yellow text-decoration-none fontsize">Super Wario was developed by a small group of friends called Wintendo based on a 100% original character Wario. The game is a 2D platformer with more than 1 map! The game consists of you (As Wario) jumping around bricks and platforms and etc. while there are some obsticles and even some "easter eggs" you can find. Once you complete the level, don't worry beacuse you don't have to play the game anymore! (Beacuse there aren't more levels), but hey at least you can go play our other game. </a>
           <a class="col-3"></a>
-          <a class="col-4 bg-purple m-0 text-yellow text-decoration-none fs-4">Wario Kart is a racing game made by Wintendo based on their previous game "Super Wario", the game shares similar graphics and characters. Here you are also faced with having to dodge obsticles like cacti, bananas and barrels. But be careful! It may look like the barrels don't do anything but push you back, but in reality you WILL DIE if you get hit by them a few times. You don't like our character Wario? Then you can choose from other fantastic and definetly original characters!</a> 
+          <a class="col-4 bg-purple m-0 text-yellow text-decoration-none fontsize">Wario Kart is a racing game made by Wintendo based on their previous game "Super Wario", the game shares similar graphics and characters. Here you are also faced with having to dodge obsticles like cacti, bananas and barrels. But be careful! It may look like the barrels don't do anything but push you back, but in reality you WILL DIE if you get hit by them a few times. You don't like our character Wario? Then you can choose from other fantastic and definetly original characters!</a> 
       </div>
         
           <h1 id="gepigeny" class=" bg-purple text-yellow text-center m-0 " style="font-size: 300%;">System Requirements</h1>
@@ -372,7 +383,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
           const element = document.getElementById("valami");
           setTimeout(function(){
             element.remove();
-          },2000);
+          },1200);
         </script>
 
     </body>   
